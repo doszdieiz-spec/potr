@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F9 Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Adding a bolder font weight for the title -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #111827; /* Dark blue-gray background */
+            /* Initially prevent scrolling while the animation plays */
+            overflow: hidden;
+        }
+
+        /* Smooth transition for image cards on hover */
+        .image-card {
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect: lift the card up */
+        .image-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Full-screen loader container for the typing animation */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #111827;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            transition: opacity 0.5s ease-out; /* Smooth fade-out effect */
+        }
+
+        /* Container for the typing text and cursor */
+        #typing-text-container {
+            color: #fff;
+            font-size: 2.5rem; /* Responsive font size */
+            font-weight: 700;
+            white-space: nowrap; /* Prevents the text from wrapping */
+            overflow: hidden; /* Hides text that hasn't been "typed" yet */
+            border-right: 3px solid #fff; /* The blinking cursor */
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        /* Keyframes for the blinking cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #fff; }
+        }
+
+        /* Utility class to hide elements until they are needed */
+        .hidden {
+            display: none;
+        }
+        
+        /* Making the typing text larger on bigger screens */
+        @media (min-width: 768px) {
+            #typing-text-container {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased text-white">
+
+    <!-- Loader screen with typing text -->
+    <div id="loader">
+        <div id="typing-text-container"></div>
+    </div>
+
+    <!-- Main gallery content, initially hidden -->
+    <div id="gallery-content" class="hidden flex flex-col items-center gap-10 md:gap-12 py-10 md:py-12 px-4">
+
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+             <img src="https://i.postimg.cc/vB84xcnG/sadasdasd.png" alt="Image 1" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/HLWmQKYV/chests.png" alt="Image 2" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/9X76qVdG/image.png" alt="Image 3" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/2S89TfZM/daggers-emrald.png" alt="Image 4" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/zfHjPDX7/himmer.png" alt="Image 5" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/Pxz1BCGJ/orc-monster-no-texture.png" alt="Image 6" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/MG0cGg9s/icedagger.png" alt="Image 7" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/t4WJrLGR/image.png" alt="Image 8" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/RFMTC7LH/Media-Player-10-2-2025-12-37-50-PM.png" alt="Image 9" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+        <div class="w-full max-w-4xl image-card rounded-lg border border-gray-800 bg-black p-1 shadow-lg">
+            <img src="https://i.postimg.cc/QMc6dxGr/image.png" alt="Image 10" class="w-full h-auto object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/111827/FFFFFF?text=Image+Not+Found';">
+        </div>
+
+    </div>
+
+    <script>
+        // Wait until the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingTextContainer = document.getElementById('typing-text-container');
+            const loader = document.getElementById('loader');
+            const galleryContent = document.getElementById('gallery-content');
+            const textToType = 'F9 Portfolio';
+            let charIndex = 0;
+            const typingSpeed = 150; // Milliseconds per character
+
+            function type() {
+                // Check if there are still characters to type
+                if (charIndex < textToType.length) {
+                    typingTextContainer.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    // Typing is complete
+                    // Stop the blinking cursor by removing the border
+                    typingTextContainer.style.borderRight = 'none';
+                    
+                    // Wait a moment before fading out the loader
+                    setTimeout(() => {
+                        loader.style.opacity = '0';
+                        
+                        // After the fade-out transition, hide the loader and show the content
+                        loader.addEventListener('transitionend', () => {
+                            loader.classList.add('hidden');
+                            galleryContent.classList.remove('hidden');
+                            // Allow the user to scroll the page again
+                            document.body.style.overflow = 'auto';
+                        }, { once: true }); // Ensure this event listener only runs once
+
+                    }, 500); // 0.5-second pause after typing
+                }
+            }
+
+            // Start the typing animation
+            type();
+        });
+    </script>
+
+</body>
+</html>
